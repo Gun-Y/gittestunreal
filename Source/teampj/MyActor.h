@@ -1,26 +1,25 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// MyActor.cpp
 
-#pragma once
 
-#include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-#include "MyActor.generated.h"
+#include "MyActor.h"
 
-UCLASS()
-class TEAMPJ_API AMyActor : public AActor
+AMyActor::AMyActor()
 {
-	GENERATED_BODY()
-	
-public:	
-	// Sets default values for this actor's properties
-	AMyActor();
+	PrimaryActorTick.bCanEverTick = true;
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+}
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+void AMyActor::BeginPlay()
+{
+	Super::BeginPlay();
 
-};
+	//UE_LOG(LogTemp, Warning, TEXT("AMyActor has begun play!"));
+}
+
+void AMyActor::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	//UE_LOG(LogTemp, Warning, TEXT("AMyActor is ticking!"));
+}
+
